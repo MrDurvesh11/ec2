@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Icons - Coming Soon!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #0a1e3a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to bottom, rgba(10, 30, 58, 0.9), rgba(10, 30, 58, 0.95)), url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .logo {
+            width: 200px;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+        }
+        
+        .countdown-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .countdown-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            margin: 0 10px;
+            padding: 20px;
+            min-width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #40b4e5;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-label {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .launch-date {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #40b4e5;
+            font-weight: 600;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icon:hover {
+            background: #40b4e5;
+            transform: translateY(-5px);
+        }
+        
+        .teams-preview {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .team-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: grayscale(0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .team-logo:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+        
+        .cta-button {
+            background: #40b4e5;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(64, 180, 229, 0.3);
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background: #2c8bba;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(64, 180, 229, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .highlight {
+            color: #40b4e5;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .countdown-title {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                margin: 5px;
+                padding: 15px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+        }
+        
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./logo.png" alt="Cricket Icons Logo" class="logo">
+        
+        <h1 class="countdown-title">Get Ready for <span class="highlight">Cricket Icons</span></h1>
+        <p class="tagline">Home of the First multi-team licensed IPL collectibles!</p>
+        
+        <p class="countdown-subtitle">The wait is almost over! Cricket Icons is launching soon with exclusive licensed collectibles from your favorite IPL teams.</p>
+        
+        <p class="launch-date">Launching on April 17, 2025 at 6:00 PM</p>
+        
+        <div class="countdown-box">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        
+        <div class="teams-preview">
+            <!-- Placeholder team logos. Replace with actual team logos -->
+            <img src="./mi.png" alt="Mumbai Indians" class="team-logo">
+            <img src="./kkr.png" alt="Kolkata Knight Riders" class="team-logo">
+            <img src="./gt.png" alt="Gujarat Titans" class="team-logo">
+            <img src="./rr.png" alt="Rajasthan Royals" class="team-logo">
+        </div>
+        
+    
+    <div class="footer">
+        &copy; 2025 Cricket Icons. All rights reserved.
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const launchDate = new Date("April 17, 2025 18:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the results
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+                
+                // You could add some code here to show a "We're live!" message
+            }
+        }
+        
+        // Update the countdown every second
+        updateCountdown(); // Run once immediately
+        const countdownTimer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
