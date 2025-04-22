@@ -13,14 +13,15 @@
         }
         
         body {
-            background-color: #0a1e3a;
+            background: linear-gradient(135deg, #0a1e3a 0%, #1e3c72 100%);
             color: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: linear-gradient(to bottom, rgba(10, 30, 58, 0.9), rgba(10, 30, 58, 0.95)), url('/api/placeholder/1200/800');
+            background-image: url('/api/placeholder/1200/800'), linear-gradient(135deg, rgba(64,180,229,0.15) 0%, rgba(255,215,0,0.10) 100%);
+            background-blend-mode: overlay;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,145 +30,154 @@
         }
         
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            background: rgba(10, 30, 58, 0.92);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(64,180,229,0.25), 0 1.5px 8px 0 rgba(255,215,0,0.10);
+            padding: 40px 32px 32px 32px;
+            margin: 40px 0;
+            max-width: 600px;
+            width: 95%;
+            position: relative;
+            z-index: 2;
         }
         
         .logo {
-            width: 200px;
-            margin-bottom: 40px;
+            width: 120px;
+            margin-bottom: 24px;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 12px #ffd70088);
+        }
+        
+        .success-title {
+            font-size: 2.7rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            color: #ffd700;
+            text-shadow: 0 2px 10px #40b4e5, 0 4px 30px rgba(0,0,0,0.3);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .success-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            animation: shake 1.5s infinite;
+        }
+        
+        .success-message {
+            font-size: 1.18rem;
+            margin-bottom: 22px;
+            max-width: 520px;
+            line-height: 1.7;
+            color: #e6e6e6;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 28px;
+            padding: 0;
+        }
+        
+        .feature-item {
+            font-size: 1.13rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.07);
+            border-radius: 8px;
+            padding: 8px 16px;
+            box-shadow: 0 2px 8px 0 rgba(64,180,229,0.07);
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+        }
+        
+        .comeback-message {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #40b4e5;
+            font-weight: bold;
+            letter-spacing: 1px;
             animation: pulse 2s infinite;
         }
         
-        .countdown-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .countdown-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        
-        .countdown-box {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            margin: 0 10px;
-            padding: 20px;
-            min-width: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-        
-        .countdown-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #40b4e5;
-            margin-bottom: 5px;
-        }
-        
-        .countdown-label {
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        
-        .launch-date {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #40b4e5;
-            font-weight: 600;
-        }
-        
-        .social-links {
-            display: flex;
-            margin-top: 30px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            margin: 0 10px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .social-icon:hover {
-            background: #40b4e5;
-            transform: translateY(-5px);
+        .tagline {
+            font-style: italic;
+            margin-bottom: 18px;
+            color: #ffd700;
+            font-size: 1.1rem;
+            animation: fadeIn 1.5s ease-out;
         }
         
         .teams-preview {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            gap: 18px;
+            margin-top: 28px;
+            margin-bottom: 18px;
         }
         
         .team-logo {
-            width: 60px;
-            height: 60px;
+            width: 54px;
+            height: 54px;
             object-fit: contain;
-            filter: grayscale(0.7);
-            transition: all 0.3s ease;
+            filter: grayscale(0.5) drop-shadow(0 0 8px #40b4e5cc);
+            transition: all 0.3s cubic-bezier(.4,2,.6,1);
+            border-radius: 50%;
+            background: #fff2;
         }
         
         .team-logo:hover {
-            filter: grayscale(0);
-            transform: scale(1.1);
+            filter: grayscale(0) drop-shadow(0 0 16px #ffd700cc);
+            transform: scale(1.13) rotate(-6deg);
         }
         
-        .cta-button {
-            background: #40b4e5;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1rem;
+        .cta-btn {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #ffd700 0%, #40b4e5 100%);
+            color: #0a1e3a;
             font-weight: bold;
-            border-radius: 30px;
-            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 32px;
+            box-shadow: 0 2px 12px 0 #40b4e588;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(64, 180, 229, 0.3);
-            margin-top: 20px;
-            text-decoration: none;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
         }
         
-        .cta-button:hover {
-            background: #2c8bba;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(64, 180, 229, 0.4);
+        .cta-btn:hover {
+            background: linear-gradient(90deg, #40b4e5 0%, #ffd700 100%);
+            color: #fff;
+            transform: scale(1.07);
+        }
+        
+        @keyframes confetti {
+            0% {transform: translateY(-100px) rotateZ(0deg); opacity: 1;}
+            100% {transform: translateY(600px) rotateZ(360deg); opacity: 0;}
+        }
+        
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 12px;
+            height: 18px;
+            border-radius: 3px;
+            opacity: 0.85;
+            animation: confetti 2.8s linear forwards;
         }
         
         @keyframes pulse {
@@ -188,18 +198,8 @@
         }
         
         @media (max-width: 768px) {
-            .countdown-title {
+            .success-title {
                 font-size: 1.8rem;
-            }
-            
-            .countdown-item {
-                min-width: 80px;
-                margin: 5px;
-                padding: 15px;
-            }
-            
-            .countdown-number {
-                font-size: 2rem;
             }
             
             .logo {
@@ -215,43 +215,32 @@
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.6);
         }
-        
-        .tagline {
-            font-style: italic;
-            margin-bottom: 30px;
-            color: #ffd700;
-        }
     </style>
 </head>
 <body>
+    <canvas class="confetti"></canvas>
     <div class="container">
         <img src="./logo.png" alt="Cricket Icons Logo" class="logo">
         
-        <h1 class="countdown-title">Get Ready for <span class="highlight">Cricket Icons</span></h1>
-        <p class="tagline">Home of the First multi-team licensed IPL collectibles!</p>
+        <h1 class="success-title">Cricket Fans, You’re Unstoppable!</h1>
+        <div class="success-emoji">🏏✨</div>
         
-        <p class="countdown-subtitle">The wait is almost over! Cricket Icons is launching soon with exclusive licensed collectibles from your favorite IPL teams.</p>
+        <p class="success-message">
+            What an electrifying moment! The Cricket Icons debut drop has SOLD OUT in just 1 hour — a true testament to India’s passion for cricket.<br>
+            Your excitement, your cheers, and your unwavering support have made history. From seasoned collectors to the newest fans, you’ve turned this launch into a festival of cricket.
+        </p>
         
-        <!-- <p class="launch-date">Launching on April 21, 2025 at 6:00 PM</p> -->
         
-        <!-- <div class="countdown-box">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Seconds</div>
-            </div>
-        </div> -->
+        <ul class="feature-list">
+            <li class="feature-item"><span class="feature-icon">🌟</span> Fresh, exclusive designs</li>
+            <li class="feature-item"><span class="feature-icon">🏆</span> More legendary players</li>
+            <li class="feature-item"><span class="feature-icon">🎁</span> Surprises you won’t see coming</li>
+        </ul>
+        
+        <h2 class="comeback-message">Get Ready for the Next Drop!</h2>
+        <p class="tagline">Bigger. Bolder. Even more iconic.</p>
+        <p class="success-message">Stay tuned. Stay legendary.<br>Because the cricket celebration has only just begun.</p>
+       
         
         <div class="teams-preview">
             <!-- Placeholder team logos. Replace with actual team logos -->
@@ -261,6 +250,7 @@
             <img src="./rr.png" alt="Rajasthan Royals" class="team-logo">
         </div>
         
+    </div>
     
     <div class="footer">
         &copy; 2025 Cricket Icons. All rights reserved.
@@ -300,6 +290,47 @@
         // Update the countdown every second
         updateCountdown(); // Run once immediately
         const countdownTimer = setInterval(updateCountdown, 1000);
+        
+        // Confetti effect
+        function randomColor() {
+            const colors = ['#ffd700', '#40b4e5', '#ff5e62', '#7afcff', '#fff', '#ffb347'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        function launchConfetti() {
+            const canvas = document.querySelector('.confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            let pieces = [];
+            for (let i = 0; i < 60; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * -canvas.height,
+                    w: 12,
+                    h: 18,
+                    color: randomColor(),
+                    r: Math.random() * 360,
+                    s: 2 + Math.random() * 3
+                });
+            }
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let p of pieces) {
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.r * Math.PI / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+                    ctx.restore();
+                    p.y += p.s;
+                    p.r += 2;
+                }
+                pieces = pieces.filter(p => p.y < canvas.height + 40);
+                if (pieces.length) requestAnimationFrame(draw);
+            }
+            draw();
+        }
+        window.addEventListener('load', launchConfetti);
     </script>
 </body>
 </html>
