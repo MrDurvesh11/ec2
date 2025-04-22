@@ -1,336 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Icons - Coming Soon!</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0a1e3a 0%, #1e3c72 100%);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-image: url('/api/placeholder/1200/800'), linear-gradient(135deg, rgba(64,180,229,0.15) 0%, rgba(255,215,0,0.10) 100%);
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            background: rgba(10, 30, 58, 0.92);
-            border-radius: 24px;
-            box-shadow: 0 8px 32px 0 rgba(64,180,229,0.25), 0 1.5px 8px 0 rgba(255,215,0,0.10);
-            padding: 40px 32px 32px 32px;
-            margin: 40px 0;
-            max-width: 600px;
-            width: 95%;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo {
-            width: 120px;
-            margin-bottom: 24px;
-            animation: pulse 2s infinite;
-            filter: drop-shadow(0 0 12px #ffd70088);
-        }
-        
-        .success-title {
-            font-size: 2.7rem;
-            margin-bottom: 16px;
-            letter-spacing: 2px;
-            color: #ffd700;
-            text-shadow: 0 2px 10px #40b4e5, 0 4px 30px rgba(0,0,0,0.3);
-            animation: pulse 1.5s infinite;
-        }
-        
-        .success-emoji {
-            font-size: 2.5rem;
-            margin-bottom: 18px;
-            animation: shake 1.5s infinite;
-        }
-        
-        .success-message {
-            font-size: 1.18rem;
-            margin-bottom: 22px;
-            max-width: 520px;
-            line-height: 1.7;
-            color: #e6e6e6;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .feature-list {
-            list-style: none;
-            margin-bottom: 28px;
-            padding: 0;
-        }
-        
-        .feature-item {
-            font-size: 1.13rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.07);
-            border-radius: 8px;
-            padding: 8px 16px;
-            box-shadow: 0 2px 8px 0 rgba(64,180,229,0.07);
-        }
-        
-        .feature-icon {
-            font-size: 1.5rem;
-            margin-right: 12px;
-        }
-        
-        .comeback-message {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: #40b4e5;
-            font-weight: bold;
-            letter-spacing: 1px;
-            animation: pulse 2s infinite;
-        }
-        
-        .tagline {
-            font-style: italic;
-            margin-bottom: 18px;
-            color: #ffd700;
-            font-size: 1.1rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .teams-preview {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-top: 28px;
-            margin-bottom: 18px;
-        }
-        
-        .team-logo {
-            width: 54px;
-            height: 54px;
-            object-fit: contain;
-            filter: grayscale(0.5) drop-shadow(0 0 8px #40b4e5cc);
-            transition: all 0.3s cubic-bezier(.4,2,.6,1);
-            border-radius: 50%;
-            background: #fff2;
-        }
-        
-        .team-logo:hover {
-            filter: grayscale(0) drop-shadow(0 0 16px #ffd700cc);
-            transform: scale(1.13) rotate(-6deg);
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 12px 32px;
-            background: linear-gradient(90deg, #ffd700 0%, #40b4e5 100%);
-            color: #0a1e3a;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 32px;
-            box-shadow: 0 2px 12px 0 #40b4e588;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s, transform 0.2s;
-        }
-        
-        .cta-btn:hover {
-            background: linear-gradient(90deg, #40b4e5 0%, #ffd700 100%);
-            color: #fff;
-            transform: scale(1.07);
-        }
-        
-        @keyframes confetti {
-            0% {transform: translateY(-100px) rotateZ(0deg); opacity: 1;}
-            100% {transform: translateY(600px) rotateZ(360deg); opacity: 0;}
-        }
-        
-        .confetti {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 0;
-            pointer-events: none;
-            z-index: 10;
-        }
-        
-        .confetti-piece {
-            position: absolute;
-            width: 12px;
-            height: 18px;
-            border-radius: 3px;
-            opacity: 0.85;
-            animation: confetti 2.8s linear forwards;
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        
-        .highlight {
-            color: #40b4e5;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            .success-title {
-                font-size: 1.8rem;
-            }
-            
-            .logo {
-                width: 150px;
-            }
-        }
-        
-        .footer {
-            margin-top: auto;
-            padding: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cricket Icons – Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0a1e3a 0%, #1e3c72 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .hero {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('/api/placeholder/1200/800'), linear-gradient(135deg, rgba(64,180,229,0.15), rgba(255,215,0,0.10));
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #ffd70088);
+      animation: pulse 2s infinite;
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 0 2px 10px #40b4e5;
+      margin-bottom: 12px;
+      animation: pulse 1.5s infinite;
+    }
+    .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      animation: shake 1.5s infinite;
+    }
+    p.description {
+      max-width: 700px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e6e6e6;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+    ul.features {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .features li {
+      background: rgba(255,255,255,0.08);
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    .features li span {
+      margin-right: 10px;
+      font-size: 1.3rem;
+    }
+    .comeback {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #40b4e5;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-style: italic;
+      color: #ffd700;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .teams {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .teams img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff2;
+      transition: 0.3s ease;
+      filter: grayscale(0.5) drop-shadow(0 0 6px #40b4e5cc);
+    }
+    .teams img:hover {
+      transform: scale(1.1);
+      filter: grayscale(0) drop-shadow(0 0 12px #ffd700cc);
+    }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: rotate(0); }
+      25% { transform: rotate(3deg); }
+      75% { transform: rotate(-3deg); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive styles for mobile devices */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 30px 15px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .emoji {
+        font-size: 1.8rem;
+      }
+      p.description {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .features li {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+      .comeback {
+        font-size: 1.4rem;
+      }
+      .tagline {
+        font-size: 0.9rem;
+      }
+      .teams {
+        gap: 12px;
+      }
+      .teams img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        width: 80px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .features {
+        gap: 8px;
+      }
+      .features li {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+      ul.features {
+        flex-direction: column;
+        width: 90%;
+      }
+      .teams img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <canvas class="confetti"></canvas>
-    <div class="container">
-        <img src="./logo.png" alt="Cricket Icons Logo" class="logo">
-        
-        <h1 class="success-title">Cricket Fans, You’re Unstoppable!</h1>
-        <div class="success-emoji">🏏✨</div>
-        
-        <p class="success-message">
-            What an electrifying moment! The Cricket Icons debut drop has SOLD OUT in just 1 hour — a true testament to India’s passion for cricket.<br>
-            Your excitement, your cheers, and your unwavering support have made history. From seasoned collectors to the newest fans, you’ve turned this launch into a festival of cricket.
-        </p>
-        
-        
-        <ul class="feature-list">
-            <li class="feature-item"><span class="feature-icon">🌟</span> Fresh, exclusive designs</li>
-            <li class="feature-item"><span class="feature-icon">🏆</span> More legendary players</li>
-            <li class="feature-item"><span class="feature-icon">🎁</span> Surprises you won’t see coming</li>
-        </ul>
-        
-        <h2 class="comeback-message">Get Ready for the Next Drop!</h2>
-        <p class="tagline">Bigger. Bolder. Even more iconic.</p>
-        <p class="success-message">Stay tuned. Stay legendary.<br>Because the cricket celebration has only just begun.</p>
-       
-        
-        <div class="teams-preview">
-            <!-- Placeholder team logos. Replace with actual team logos -->
-            <img src="./mi.png" alt="Mumbai Indians" class="team-logo">
-            <img src="./kkr.png" alt="Kolkata Knight Riders" class="team-logo">
-            <img src="./gt.png" alt="Gujarat Titans" class="team-logo">
-            <img src="./rr.png" alt="Rajasthan Royals" class="team-logo">
-        </div>
-        
+  <section class="hero">
+    <img src="./logo.png" alt="Cricket Icons Logo" class="logo" />
+    <h1>Cricket Fans, You’re Unstoppable!</h1>
+    <div class="emoji">🏏✨</div>
+    <p class="description">
+      The Cricket Icons debut drop <strong>SOLD OUT</strong> in just 1 hour — proving India's unmatched love for the game.
+      <br />Thank you for turning this into a cricket festival to remember!
+    </p>
+    <ul class="features">
+      <li><span>🌟</span> Exclusive, limited designs</li>
+      <li><span>🏆</span> Legendary cricketers incoming</li>
+      <li><span>🎁</span> Hidden surprises await</li>
+    </ul>
+    <div class="comeback">Get Ready for the Next Drop!</div>
+    <div class="tagline">Bigger. Bolder. Even more iconic.</div>
+    <p class="description">Stay tuned. Stay legendary.<br>The cricket celebration has only just begun.</p>
+    <div class="teams">
+      <img src="./mi.png" alt="Mumbai Indians" />
+      <img src="./kkr.png" alt="Kolkata Knight Riders" />
+      <img src="./gt.png" alt="Gujarat Titans" />
+      <img src="./rr.png" alt="Rajasthan Royals" />
     </div>
-    
-    <div class="footer">
-        &copy; 2025 Cricket Icons. All rights reserved.
-    </div>
-
-    <script>
-        // Countdown timer
-        function updateCountdown() {
-            const launchDate = new Date("April 21, 2025 18:00:00").getTime();
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-            
-            // Calculate time units
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Display the results
-            document.getElementById("days").textContent = days.toString().padStart(2, '0');
-            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-            
-            // If the countdown is finished, display a message
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                document.getElementById("days").textContent = "00";
-                document.getElementById("hours").textContent = "00";
-                document.getElementById("minutes").textContent = "00";
-                document.getElementById("seconds").textContent = "00";
-                
-                // You could add some code here to show a "We're live!" message
-            }
-        }
-        
-        // Update the countdown every second
-        updateCountdown(); // Run once immediately
-        const countdownTimer = setInterval(updateCountdown, 1000);
-        
-        // Confetti effect
-        function randomColor() {
-            const colors = ['#ffd700', '#40b4e5', '#ff5e62', '#7afcff', '#fff', '#ffb347'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-        function launchConfetti() {
-            const canvas = document.querySelector('.confetti');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            let pieces = [];
-            for (let i = 0; i < 60; i++) {
-                pieces.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * -canvas.height,
-                    w: 12,
-                    h: 18,
-                    color: randomColor(),
-                    r: Math.random() * 360,
-                    s: 2 + Math.random() * 3
-                });
-            }
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let p of pieces) {
-                    ctx.save();
-                    ctx.translate(p.x, p.y);
-                    ctx.rotate(p.r * Math.PI / 180);
-                    ctx.fillStyle = p.color;
-                    ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
-                    ctx.restore();
-                    p.y += p.s;
-                    p.r += 2;
-                }
-                pieces = pieces.filter(p => p.y < canvas.height + 40);
-                if (pieces.length) requestAnimationFrame(draw);
-            }
-            draw();
-        }
-        window.addEventListener('load', launchConfetti);
-    </script>
+  </section>
+  <div class="footer">&copy; 2025 Cricket Icons. All rights reserved.</div>
 </body>
 </html>
